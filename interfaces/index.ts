@@ -52,3 +52,13 @@ export interface PillProps {
   isActive?: boolean;
   onClick?: () => void;
 }
+
+export interface FilterOption {
+  label: string;
+  value: string;
+}
+
+export interface SortOption {
+  label: string;
+  value: string;
+}
