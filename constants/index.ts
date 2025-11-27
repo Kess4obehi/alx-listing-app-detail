@@ -1,5 +1,6 @@
 // constants/index.ts
-import { PropertyProps } from '../interfaces';
+
+import { PropertyProps, Review, Amenity, Host } from '../interfaces';
 
 export const API_URLS = {
   LISTINGS: '/api/listings',
@@ -406,3 +407,89 @@ export const ACCOMMODATION_TYPES = [
   "Amazing pool", "Beach house", "Island", "Camping", "Apartment", 
   "House", "Lakefront", "Farm house", "Treehouse", "Cabins", "Castles"
 ];
+
+// New constants for property detail page
+export const SAMPLE_REVIEWS: Review[] = [
+  {
+    id: "1",
+    name: "Kerry",
+    year: "3 years on alx",
+    avatar: "/assets/M1.png",
+    rating: 4.8,
+    comment: "I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking",
+    date: "2024-01-15"
+  },
+  {
+    id: "2",
+    name: "Pooja",
+    year: "1 years on alx",
+    avatar: "/assets/M2.png",
+    rating: 4.9,
+    comment: "We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictures, ",
+    date: "2024-01-10"
+  },
+  {
+    id: "3",
+    name: "Cindy & Ben",
+    year: "1 years on alx",
+    avatar: "/assets/M3.png",
+    rating: 4.7,
+    comment: "I simply don’t have the words to describe how incredibly beautiful the villa and its surroundings are. This is a wonderful remote spot that is simply breathtaking",
+    date: "2024-01-05"
+  },
+  {
+    id: "4",
+    name: "Marnie",
+    year: "5 years on alx",
+    avatar: "/assets/M4.png",
+    rating: 4.6,
+    comment: "We stayed at this home for a family vacation of 7 adults (including 3 couples, 1 baby) and had a fantastic stay. The house was BEAUTIFUL and honestly better than shown in pictures, ",
+    date: "2023-12-20"
+  }
+];
+
+export const SAMPLE_AMENITIES: Amenity[] = [
+  { name: "Mountain view", available: true, icon: "/assets/mountain.png" },
+  { name: "Chef", available: true, icon: "/assets/chef.png" },
+  { name: "Cleaning available during stay", available: true, icon: "/assets/broom.png" },
+  { name: "Pool - infinity", available: true, icon: "/assets/pool.png" },
+  { name: "Kitchen", available: true, icon: "/assets/pan.png" },
+  { name: "Shared beach access", available: true, icon: "/assets/sunrise.png" },
+  { name: "Butler", available: true, icon: "/assets/bell.png" },
+  { name: "Bartender", available: true, icon: "/assets/shaker.png" },
+  { name: "Hot tub", available: true, icon: "/assets/hot-tub.png" },
+  { name: "Wifi", available: true, icon: "/assets/wifi.png" },
+  { name: "Fireplace", available: false, icon: "/assets/barn 1.png" },
+  { name: "Beach Access", available: false, icon: "/assets/pool.png" }
+];
+
+export const SAMPLE_HOST: Host = {
+  name: "Alex Rodriguez",
+  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+  joinedDate: "2018",
+  responseRate: 98,
+  responseTime: "within an hour"
+};
+
+export const PROPERTY_DESCRIPTIONS: Record<string, string> = {
+  "Villa Ocean Breeze": "Luxurious beachfront villa with stunning ocean views and modern amenities. Perfect for families and groups looking for a premium vacation experience.",
+  "Mountain Escape Chalet": "Cozy mountain retreat with panoramic views and rustic charm. Ideal for nature lovers and adventure seekers.",
+  "Cozy Desert Retreat": "Beautiful desert oasis with modern comforts and stunning landscape views. Perfect for a peaceful getaway.",
+  "City Lights Penthouse": "Luxurious penthouse in the heart of the city with breathtaking skyline views and premium amenities.",
+  "Riverside Cabin": "Charming cabin by the river offering tranquility and natural beauty with all modern conveniences.",
+  "Modern Beachfront Villa": "Contemporary villa right on the beach with private access and stunning ocean views.",
+  "Lakeside Chalet": "Beautiful chalet overlooking a serene lake, perfect for fishing, swimming, and relaxation.",
+  "Tropical Garden Villa": "Lush tropical villa surrounded by beautiful gardens with private pool and outdoor living spaces.",
+  "Urban Loft": "Stylish urban loft in the city center with industrial chic design and modern amenities.",
+  "Secluded Forest Cabin": "Private cabin deep in the forest offering complete seclusion and connection with nature.",
+  "Cliffside Villa": "Dramatic villa perched on a cliff with panoramic ocean views and infinity pool.",
+  "Coastal Escape Villa": "Beautiful coastal villa with direct beach access and stunning sunset views.",
+  "Historical Villa": "Charming historical villa with traditional architecture and modern comforts.",
+  "Downtown Apartment": "Modern apartment in the downtown area with easy access to shops, restaurants, and entertainment.",
+  "Luxury Safari Lodge": "Exclusive safari lodge offering luxury accommodations and wildlife viewing opportunities.",
+  "Countryside Cottage": "Quaint countryside cottage with traditional charm and peaceful surroundings.",
+  "Riverfront Mansion": "Grand mansion on the riverfront with extensive gardens and luxury amenities.",
+  "Ski Chalet": "Cozy ski chalet with mountain views and easy access to ski slopes.",
+  "Island Paradise Villa": "Private island villa with white sand beaches and crystal clear waters.",
+  "Clifftop Retreat": "Modern retreat on the clifftop with stunning coastal views and contemporary design."
+};

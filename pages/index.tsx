@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { PROPERTYLISTINGSAMPLE, FILTER_OPTIONS, HERO_BACKGROUND, UI_TEXT } from '@/constants';
 import { PropertyProps } from '@/interfaces';
 import Pill from '@/components/common/Pill';
+import { useRouter } from 'next/router';
 
 const Home = () => {
   const [filters, setFilters] = useState<string[]>([]);
@@ -113,14 +114,23 @@ const Home = () => {
   );
 };
 
-// Property Card Component
+// Property Card Component - Move useRouter to the top level
 const PropertyCard: React.FC<{ property: PropertyProps }> = ({ property }) => {
+  const router = useRouter(); // Move this to the top level
   const formatPrice = (price: number) => {
     return price.toLocaleString('en-US');
   };
 
+  const handleCardClick = () => {
+    const slug = property.name.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/property/${slug}`);
+  };
+
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+    <div 
+      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="h-48 bg-gray-200 relative">
         {/* Property Image */}
         <img 
@@ -191,7 +201,6 @@ const PropertyCard: React.FC<{ property: PropertyProps }> = ({ property }) => {
             <span className="text-base font-bold text-gray-900">${formatPrice(property.price)}</span>
             <span className="text-gray-600 text-xs">/n</span>
           </div>
-          
         </div>
       </div>
     </div>

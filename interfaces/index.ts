@@ -62,3 +62,43 @@ export interface SortOption {
   label: string;
   value: string;
 }
+
+
+// New interfaces for Property Details Page
+export interface Review {
+  id: string;
+  name: string;
+  year: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface Host {
+  name: string;
+  avatar: string;
+  joinedDate: string;
+  responseRate: number;
+  responseTime: string;
+}
+
+export interface Amenity {
+  name: string;
+  available: boolean;
+  icon: string;
+}
+
+export interface PropertyDetailProps {
+  property: PropertyProps;
+  description: string;
+  amenities: Amenity[];
+  reviews: Review[];
+  host: {
+    name: string;
+    avatar: string;
+    joinedDate: string;
+    responseRate: number;
+    responseTime: string;
+  };
+}
